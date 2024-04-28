@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop_app/models/Shoe.dart';
 
 class ShoeCard extends StatelessWidget {
   Shoe shoe;
-  ShoeCard({super.key, required this.shoe});
+  final onTap;
+  ShoeCard({super.key, required this.shoe,required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +21,20 @@ class ShoeCard extends StatelessWidget {
         //*---------------------  shoe  image
         children: [
           Container(
+            height: 150,
             color: Colors.black,
             width: double.maxFinite,
             child: Image.asset(
               shoe.imagePath,
               // height: 200,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           //* ----------------- shoe discription
-          Text(shoe.discription),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Text(shoe.discription),
+          ),
           //* ----------------------  shoe name + price
           Padding(
             padding: const EdgeInsets.only(left: 13.0),
@@ -52,16 +58,19 @@ class ShoeCard extends StatelessWidget {
                     ],
                   ),
                   //* a button to add cart
-                  Container(
-                    padding: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(13.0),
-                            bottomRight: Radius.circular(13.0))),
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
+                  GestureDetector(
+                    onTap: onTap,
+                    child: Container(
+                      padding: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(13.0),
+                              bottomRight: Radius.circular(13.0))),
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
                     ),
                   )
                 ]),

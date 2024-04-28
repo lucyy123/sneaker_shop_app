@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop_app/Components/bottom_bar.dart';
-import 'package:sneaker_shop_app/pages/cart.dart';
-import 'package:sneaker_shop_app/pages/shop.dart';
+import 'package:sneaker_shop_app/pages/cart_page.dart';
+import 'package:sneaker_shop_app/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     const Shop(),
 
 //! cart page
-    const Cart(),
+    const CartPage(),
   ];
   @override
   Widget build(BuildContext context) {
