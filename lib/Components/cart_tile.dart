@@ -36,7 +36,7 @@ class _ListCartTileState extends State<ListCartTile> {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(10),
         ),
         child: ListTile(
