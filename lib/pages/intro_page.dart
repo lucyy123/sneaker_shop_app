@@ -9,18 +9,20 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //*-------------------------- image --------------------
               Padding(
                 padding: const EdgeInsets.only(bottom: 25.0),
                 child: Image.asset(
                   "assets/images/logo.png",
                   height: 100,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
 
@@ -59,14 +61,16 @@ class IntroPage extends StatelessWidget {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Theme.of(context).colorScheme.primary,
                       borderRadius: BorderRadius.circular(10)),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Center(
                       child: Text(
                         "Shop Now",
-                        style: TextStyle(color: Colors.white, fontSize: 17),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                            fontSize: 17),
                       ),
                     ),
                   ),

@@ -38,7 +38,8 @@ class _ShopState extends State<Shop> {
             child: Container(
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(10)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
